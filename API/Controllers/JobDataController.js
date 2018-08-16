@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var JobInfo = mongoose.model('JobInfo');
 
 exports.processRequest = function(req, res) {
+//return res.json(req.body);
 if (req.body.queryResult.action == "location") {
     getJobInfo(req,res)
   }
