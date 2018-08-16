@@ -13,6 +13,6 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 var routes = require('./API/Routes/Router'); //importing route
 routes(server); //register the route
-server.listen((8000), function () {
+server.listen((80), function () {
     console.log("Server is up and listening on port" + 8000);
 });

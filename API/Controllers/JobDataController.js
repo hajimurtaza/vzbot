@@ -3,14 +3,14 @@ var mongoose = require('mongoose');
 var JobInfo = mongoose.model('JobInfo');
 
 exports.processRequest = function(req, res) {
-if (req.body.result.action == "location") {
+if (req.body.queryResult.action == "location") {
     getJobInfo(req,res)
   }
 };
 
 function getJobInfo(req,res)
 {
-let zipcodeToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.zipcode ? req.body.result.parameters.zipcode : 'Unknown';
+let zipcodeToSearch = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.zipcode ? req.body.result.parameters.zipcode : 'Unknown';
 JobInfo.findOne({job:jobToSearch},function(err,jobExists)
       {
         if (err)
